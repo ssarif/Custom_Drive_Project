@@ -1,0 +1,151 @@
+#app{
+    display: none;
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+#app-title-bar {
+    display: flex;
+    background-color: rgb(93, 127, 161);
+    height: 25px;
+}
+
+#app-title {
+    color: white;
+    width: 97%;
+    text-align: center;
+    font-size: 17px;
+}
+
+#app-menu-bar {
+    display: flex;
+    background-color: lightslategray;
+    height: 40px;
+}
+
+#bgcolortext {
+    position: absolute;
+    top: 12%;
+    left: 17%;
+    color: white;
+    background-color: black;
+    visibility: hidden;
+}
+
+#spanbgcolor {
+    border: none;
+    background-color: lightslategray;
+}
+
+#spanbgcolor:hover #bgcolortext {
+    visibility: visible;
+}
+
+#spanbgcolor input[type='color'] {
+    width: 50px;
+    margin: 2px 0px;
+}
+
+#textfontcolor {
+    position: absolute;
+    top: 12%;
+    left: 23%;
+    color: white;
+    background-color: black;
+    visibility: hidden;
+}
+
+#spantextfontcolor {
+    border: none;
+    background-color: lightslategray;
+}
+
+#spantextfontcolor:hover #textfontcolor {
+    visibility: visible;
+}
+
+#spantextfontcolor input[type='color'] {
+    width: 50px;
+    margin: 2px 0px;
+}
+
+#app-body {
+    display: flex;
+    background-color:springgreen;
+    height: 500px;
+}
+
+#app-close {
+    position: relative;
+    top: -110%;
+    left: 3%;
+    float: right;
+    color: white;
+    font-weight: bolder;
+    font-size: 35px;
+}
+
+#app-close:hover {
+    cursor: pointer;
+    color: red;
+}
+
+
+.notepad-menu{
+    width: 100%;
+    padding: 5px;
+}
+
+.notepad-menu * {
+    margin: 0px 5px;
+    padding: 2px;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.notepad-menu span {
+    vertical-align: bottom;
+    
+}
+
+.notepad-menu span:hover {
+    border: 2px solid black;
+    background-color: white;
+    color: teal;
+}
+
+
+.notepad-menu [pressed=true] {
+    border: 2px solid black;
+    background-color: white;
+    color: teal;
+}
+
+.notepad-menu input[type=color] {
+    width: 30px;
+}
+
+.notepad-menu select {
+    height: 30px;
+}
+
+.notepad-body {
+    height: 100%;
+    width: 100%;
+}
+
+.notepad-body textarea{
+    height: 100%;
+    width: 100%;
+}
+
+[purpose=download] {
+    display: none;
+}

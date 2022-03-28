@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Drive Project</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/breadcrumb.css">
+    <link rel="stylesheet" href="css/resourceAdd.css">
+    <link rel="stylesheet" href="css/notepadApp.css">
+    <link rel="stylesheet" href="css/userInput.css">
+</head>
+
+<body>
+    <div id="home">
+        <div id="header">
+            <button id="addFolder" bid="1">Add Folder</button>
+            <button id="addTextFile" bid="2">Add Text File</button>
+        </div>
+
+        <div id="breadcrumb">
+            <a purpose="path" rid="-1"><span id="home-icon" class="material-icons">home</span>Home</a>
+        </div>
+
+        <div id="resource-container">
+        </div>
+    </div>
+
+    <div id="app">
+        <div id="app-title-bar">
+            <div id="app-title">title will come here</div>
+                <span id="app-close" class="material-icons">close</span>
+        </div>
+        <div id="app-menu-bar">
+        </div>
+        <div id="app-body"></div>
+    </div>
+
+    <div id="userInput">
+        <div id="inputBody">
+            <label for="name">Enter name</label>
+            <input type="text">
+        </div>
+        <div id="inputButton">
+            <button id="cancel">Cancel</button>
+            <button id="ok">Ok</button>
+        </div>
+    </div>
+
+    <div id="overlay">
+    </div>
+
+    <div id="app-overlay">
+    </div>
+
+    <template class="resources-template">
+        <div class="resource-box">
+            <div class="icon-menu">
+                <img src="" class="r-img" action="set-img-src">
+                <div class="mini-menu-container">
+                    <span class="three-dots">&#10247</span>
+                    <ul class="mini-menu">
+                        <li action="view">View</li>
+                        <li action="delete">Delete</li>
+                        <li action="rename">Rename</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="resource-name" purpose="name"></div>
+        </div>
+    </template>
+
+    <template id="templates">
+        <div class="folder" rid="" pid="">
+            <span action="rename">rename</span>
+            <span action="delete">delete</span>
+            <span action="view">view</span>
+            <div purpose="name"></div>
+        </div>
+        <div class="text-file" rid="" pid="">
+            <span action="rename">rename</span>
+            <span action="delete">delete</span>
+            <span action="view">view</span>
+            <div purpose="name"></div>
+        </div>
+        <a purpose="path" rid="-1">
+        </a>
+        <div purpose="notepad-menu" class="notepad-menu">
+            <span action="save" class="material-icons">save</span>
+            <span pressed="false" action="bold" class="material-icons">format_bold</span>
+            <span pressed="false" action="italic" class="material-icons">format_italic</span>
+            <span pressed="false" action="underline" class="material-icons">format_underline</span>
+            <span id="spanbgcolor"><input type="color" action="bg-color" /><span id="bgcolortext">Change Background Color</span></span>
+            <span id="spantextfontcolor"><input type="color" action="fg-color" /><span id="textfontcolor">Change Text Font Color</span></span>
+            <select action="font-family">
+                <option value="monospace">monospace</option>
+                <option value="serif">serif</option>
+                <option value="sans-serif">sans-serif</option>
+                <option value="cursive">cursive</option>
+                <option value="Arial">Arial</option>
+                <option value="Arial Black">Arial Black</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Rockwell">Rockwell</option>
+                <option value="Courier">Courier</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+                <option value="Brush Script MT">Brush Script MT</option>
+                <option value="Impact">Impact</option>
+                <option value="Century Gothic">Century Gothic</option>
+                <option value="Consolas">Consolas</option>
+                <option value="Ink Free">Ink Free</option>
+            </select>
+            <select action="font-size">
+                <option value="8pt">8</option>
+                <option value="10pt">10</option>
+                <option value="12pt">12</option>
+                <option value="14pt">14</option>
+                <option value="16pt">16</option>
+                <option value="18pt">18</option>
+                <option value="20pt">20</option>
+                <option value="22pt">22</option>
+                <option value="24pt">24</option>
+                <option value="26pt">26</option>
+                <option value="28pt">28</option>
+                <option value="30pt">30</option>
+            </select>
+            <span action="download" class="material-icons">download</span>
+            <input action="upload" type="file">
+            <a purpose="download" href="http://www.google.com">Link</a>
+        </div>
+        <div purpose="notepad-body" class="notepad-body">
+            <textarea OnLoad="document.myform.mytextfield.focus();" style="border:none">I am the notepad's body</textarea>
+        </div>
+    </template>
+
+
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/notepadApp.js"></script>
+
+</body>
+
+</html>

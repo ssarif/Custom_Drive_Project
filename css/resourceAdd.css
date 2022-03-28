@@ -1,0 +1,80 @@
+#resource-container {
+    height: calc(100vh - 35vh);
+    width: 100vw;
+    padding: .5rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.resource-box {
+    width: 13%;
+    height: 40%;
+    margin: 0px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.resource-box:hover {
+    background-color: rgb(229, 241, 241);
+    border-radius: 5px;
+}
+
+.r-img{
+    cursor: pointer;
+    height: 70px;
+    width: 80px;
+}
+
+.icon-menu {
+    display: flex;
+}
+
+.mini-menu-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.three-dots {
+    position: absolute;
+    display: none;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 25px;
+    border: none;
+}
+
+.mini-menu {
+    list-style: none;
+    display: none;
+    background-color: lightgray;
+    border-radius: 5px;
+    margin: 1rem .1rem;
+    padding-left: 0px;
+    position: absolute;
+    transform: translate(-60%, -10%);
+    z-index: 3;
+    border: 1px solid rgb(243, 242, 239);
+}
+
+.mini-menu * {
+    padding: 5px 24px;
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.mini-menu *:hover {
+    color: white;
+    background-color: rgb(100, 140, 156);
+    cursor: pointer;
+}
+
+.resource-name {
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+

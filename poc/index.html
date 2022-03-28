@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="header">
+        <button id="addFolder" bid="1">Add Folder</button>
+        <button id="addTextFile" bid="2">Add Text File</button>
+    </div>
+
+    <!-- <div id="modal-example">
+        <div id="container">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum cum doloribus laborum perferendis maiores,
+                voluptatem vero? Vel itaque, sequi asperiores natus, consectetur obcaecati rem cumque provident dolor
+                non porro pariatur!</p>
+            <button id="close">close container</button>
+        </div>
+
+        <button id="show">show container</button>
+    </div> -->
+
+    <div id="resource-container">
+    </div>
+
+    <div id="overlay">
+    </div>
+    <div id="userInputOverlay">
+    </div>
+
+    <div id="userInput">
+        <div id="inputBody">
+            <label for="name">Enter name</label>
+            <input type="text">
+        </div>
+        <div id="inputButton">
+            <button id="cancel">Cancel</button>
+            <button id="ok">Ok</button>
+        </div>
+    </div>
+
+    <template class="resources-template">
+        <div class="resource-box">
+            <div class="icon-menu">
+                <img src="" class="r-img" action="set-img-src">
+                <div class="mini-menu-container">
+                    <span class="three-dots">&#10247</span>
+                    <ul class="mini-menu">
+                        <li action="view">View</li>
+                        <li action="delete">Delete</li>
+                        <li action="rename">Rename</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="resource-name" purpose="name"></div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

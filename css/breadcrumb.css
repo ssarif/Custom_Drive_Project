@@ -1,0 +1,45 @@
+#breadcrumb {
+    height: 6vh;
+    margin: 2px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#breadcrumb a {
+    padding: 4px 3px;
+    font-weight: 900;
+    font-family: "sans-serif";
+}
+
+#breadcrumb a[rid='-1'] {
+    margin-bottom: 5px;
+}
+
+#breadcrumb #home-icon {
+    font-size: 18px;
+    position: relative;
+    top: 2px;
+}
+
+#breadcrumb a+a:before {
+    font-size: 15px;
+    padding-right: 5px;
+    font-weight: 900;
+    color: black;
+    content: ' \003E';
+}
+
+#breadcrumb a:hover {
+    cursor: pointer;
+    background-color: rgb(202, 241, 241);
+    border: 1px solid rgb(202, 241, 241);
+}
+
+#breadcrumb > *:last-child {
+    font-weight: bolder;
+    color: rgb(79, 149, 196);
+}
+
+
