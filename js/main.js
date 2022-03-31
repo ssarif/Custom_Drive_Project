@@ -1,5 +1,6 @@
 let btnAddFolder = document.querySelector("#addFolder");
 let btnAddTextFile = document.querySelector("#addTextFile");
+let btnAddAlbum = document.querySelector("#addAlbum");
 let divbreadcrumb = document.querySelector("#breadcrumb");
 let aRootPath = divbreadcrumb.querySelector("a[purpose='path']");
 let divContainer = document.querySelector("#container");
@@ -22,6 +23,7 @@ let rid = 0;
 
 btnAddFolder.addEventListener("click", addResource);
 btnAddTextFile.addEventListener("click", addResource);
+btnAddAlbum.addEventListener("click", addResource);
 aRootPath.addEventListener("click", viewFolderFromPath);
 // appClose.addEventListener("click", closeApp);
 
@@ -70,7 +72,19 @@ function addResource() {
             fontSize: "10pt",
             content: "I am a new file."
         });
+    } else if (this.getAttribute("bid") == "3") {
+        let rtype = "album";
+        addResourceHTML(rname, rtype, rid, pid);
+        resources.push({
+            rid: rid,
+            rname: rname,
+            rtype: rtype,
+            images: [],
+            pid: cfid
+        });
     }
+
+    // save update
     saveToStorage();
 }
 
@@ -85,7 +99,9 @@ function addResourceHTML(rname, rtype, rid, pid) {
         resourceImg.setAttribute("src", "icons/folder-icon.svg");
     } else if (rtype == "text-file") {
         resourceImg.setAttribute("src", "icons/text-file-icon.svg");
-    }
+    } else if (rtype == "album") {
+        resourceImg.setAttribute("src", "icons/album-icon.svg");
+    } 
 
     let threeDots = resourceBox.querySelector(".three-dots");
     resourceBox.addEventListener("mouseover", function () {
@@ -237,12 +253,17 @@ function viewResourceOnDoubleClick() {
                     addResourceHTML(resources[i].rname, resources[i].rtype, resources[i].rid, resources[i].pid);
                 } else if (resources[i].rtype == "text-file") {
                     addResourceHTML(resources[i].rname, resources[i].rtype, resources[i].rid, resources[i].pid);
+                } else if (resources[i].rtype == "album") {
+                    addResourceHTML(resources[i].rname, resources[i].rtype, resources[i].rid, resources[i].pid);
                 }
             }
         }
     } else if (resource.rtype == "text-file") {
         let resourceBox = this;
         openNotepad(resourceBox);
+    } else if (resource.rtype == "album") {
+        let resourceBox = this;
+        openAlbumApp(resourceBox);
     }
 }
 
@@ -274,6 +295,8 @@ function viewResource() {
                     addResourceHTML(resources[i].rname, resources[i].rtype, resources[i].rid, resources[i].pid);
                 } else if (resources[i].rtype == "text-file") {
                     addResourceHTML(resources[i].rname, resources[i].rtype, resources[i].rid, resources[i].pid);
+                } else if (resources[i].rtype == "album") {
+                    addResourceHTML(resources[i].rname, resources[i].rtype, resources[i].rid, resources[i].pid);
                 }
             }
         }
@@ -281,6 +304,10 @@ function viewResource() {
         let miniMenu = this.parentNode;
         let resourceBox = miniMenu.parentNode.parentNode.parentNode;
         openNotepad(resourceBox);
+    } else if (resource.rtype == "album") {
+        let miniMenu = this.parentNode;
+        let resourceBox = miniMenu.parentNode.parentNode.parentNode;
+        openAlbumApp(resourceBox);
     }
 }
 
@@ -304,6 +331,8 @@ function viewFolderFromPath() {
             if (resources[i].rtype == "folder") {
                 addResourceHTML(resources[i].rname, resources[i].rtype, resources[i].rid, resources[i].pid);
             } else if (resources[i].rtype == "text-file") {
+                addResourceHTML(resources[i].rname, resources[i].rtype, resources[i].rid, resources[i].pid);
+            } else if (resources[i].rtype == "album") {
                 addResourceHTML(resources[i].rname, resources[i].rtype, resources[i].rid, resources[i].pid);
             }
         }
@@ -369,6 +398,8 @@ function loadFromStorage() {
             if (resources[i].rtype == "folder") {
                 addResourceHTML(resources[i].rname, resources[i].rtype, resources[i].rid, resources[i].pid);
             } else if (resources[i].rtype == "text-file") {
+                addResourceHTML(resources[i].rname, resources[i].rtype, resources[i].rid, resources[i].pid);
+            } else if (resources[i].rtype == "album") {
                 addResourceHTML(resources[i].rname, resources[i].rtype, resources[i].rid, resources[i].pid);
             }
         }

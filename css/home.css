@@ -15,17 +15,17 @@ body {
 
 #header{
     height: 14vh;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: 10px;
-    margin: 2px;
+    margin: 0 2px;
     display: flex;
     justify-content: center;
+    background-color: rgba(87, 82, 83, 0.336);
 }
 
 #header button {
     background-color: rgb(20, 185, 117);
     color: white;
-    width: 15%;
     font-weight: 700;
     border-radius: 20px;
     padding: 2%;
@@ -35,7 +35,7 @@ body {
 }
 
 #header button:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     color: black;
     background-color: rgb(30, 119, 82);
 }

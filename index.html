@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/resourceAdd.css">
     <link rel="stylesheet" href="css/notepadApp.css">
     <link rel="stylesheet" href="css/userInput.css">
+    <link rel="stylesheet" href="css/albumApp.css">
 </head>
 
 <body>
@@ -38,6 +39,30 @@
         <div id="app-menu-bar">
         </div>
         <div id="app-body"></div>
+    </div>
+
+    <div id="album-app">
+        <div id="album-app-title-bar">
+            <div id="app-title">title will come here</div>
+            <span id="app-close" class="material-icons">close</span>
+        </div>
+        <div id="album-app-menu-bar">
+            <span id="add-img" class="material-icons">add_photo_alternate</span>
+            <span id="import-img" class="material-icons">upload</span>
+            <span id="export-img" class="material-icons">download</span>
+            <span id="playAlbum" class="material-icons">smart_display</span>
+            <span id="delete-img" class="material-icons">delete</span>
+            <input type="file" multiple="false" id="uploadFile" />
+        </div>
+        <div id="img-container">
+            <div id="img-list-container">
+            </div>
+            <div id="img-show-container">
+                <span class="material-icons" id="left">keyboard_double_arrow_left</span>
+                <div id="parent-img"></div>
+                <span class="material-icons" id="right">keyboard_double_arrow_right</span>
+            </div>
+        </div>
     </div>
 
     <div id="userInput">
@@ -124,9 +149,14 @@
         </div>
     </template>
 
+    <template id="albumTemplate">
+        
+    </template>
+
 
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/notepadApp.js"></script>
+    <script type="text/javascript" src="js/albumApp.js"></script>
 
 </body>
 
