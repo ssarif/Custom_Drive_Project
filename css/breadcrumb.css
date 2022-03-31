@@ -20,7 +20,6 @@
 #breadcrumb #home-icon {
     font-size: 18px;
     position: relative;
-    top: 2px;
 }
 
 #breadcrumb a+a:before {
