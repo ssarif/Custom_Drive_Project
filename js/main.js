@@ -28,7 +28,7 @@ aRootPath.addEventListener("click", viewFolderFromPath);
 // appClose.addEventListener("click", closeApp);
 
 function addResource() {
-    let rname = prompt("Enter folder's name");
+    let rname = prompt("Enter name");
     if (rname == null) return;
     rname = rname.trim();
 

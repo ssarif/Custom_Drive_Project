@@ -15,12 +15,11 @@ body {
 
 #header{
     height: 14vh;
-    /* border: 1px solid black; */
     padding: 10px;
     margin: 0 2px;
     display: flex;
     justify-content: center;
-    background-color: rgba(87, 82, 83, 0.336);
+    border-bottom: 1px solid rgb(238, 233, 233);
 }
 
 #header button {

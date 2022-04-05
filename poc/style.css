@@ -29,7 +29,7 @@ body {
     align-items: center;
 }
 
-#header button {
+/* #header button {
     padding: 20px;
     margin: 0px 10px;
     border-radius: 10px;
@@ -38,7 +38,33 @@ body {
     cursor: pointer;
     color: white;
     background-color: black;
+} */
+
+#addFolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+#addFolder > img[id='folder-icon'] {
+    height: 110px;
+    padding: 20px;
+    margin: 0px 10px;
+    border-radius: 10px;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+    color: white;
+    z-index: 1;
+}
+
+#plus-icon {
+    position: absolute;
+    transform: translate(120%, 96%);
+    z-index: 3;
+    height: 25px;
+}
+
 
 #header button:hover {
     background-color: rgb(250, 8, 8);
