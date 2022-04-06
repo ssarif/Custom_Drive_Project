@@ -27,6 +27,27 @@ btnAddAlbum.addEventListener("click", addResource);
 aRootPath.addEventListener("click", viewFolderFromPath);
 // appClose.addEventListener("click", closeApp);
 
+window.addEventListener("contextmenu", function(event) {
+    event.preventDefault();
+    if (event.target.classList[0] === "r-img") return;
+    var contextElement = document.getElementById("main-context-menu");
+    contextElement.style.display = "block";
+    contextElement.style.top = event.pageY + "px";
+    contextElement.style.left = event.pageX + "px";
+})
+
+window.addEventListener("click", function() {
+    document.getElementById("main-context-menu").style.display = "none";
+})
+
+const contextAddFolder = document.querySelector("#cm-add-folder");
+const contextAddFile = document.querySelector("#cm-add-file");
+const contextAddAlbum = document.querySelector("#cm-add-album");
+
+contextAddFolder.addEventListener("click", () => { btnAddFolder.click() });
+contextAddFile.addEventListener("click", () => { btnAddTextFile.click() });
+contextAddAlbum.addEventListener("click", () => { btnAddAlbum.click() });
+
 function addResource() {
     let rname = prompt("Enter name");
     if (rname == null) return;

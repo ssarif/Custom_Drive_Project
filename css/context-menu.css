@@ -1,0 +1,28 @@
+#main-context-menu {
+    display: none;
+    position: fixed;
+    z-index: 100000;
+    width: 190px;
+    color: black;
+    background-color: rgb(241, 238, 238);
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+#main-context-menu > * {
+    padding: 6px 10px;
+    font-size: 14px;
+    font-weight: normal;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+#main-context-menu > * > img {
+    width: 18px;
+}
+
+#main-context-menu > *:hover {
+    background-color: white;
+    cursor: default;
+}
