@@ -11,11 +11,9 @@
 
 <body>
 
-    <div id="header">
-        <!-- <button id="addFolder" bid="1">Add Folder</button> -->
-        <!-- <button id="addTextFile" bid="2">Add Text File</button> -->
-        <span id="addFolder" bid="1"><img src="folder-icon.svg" id="folder-icon"><img src="plus-icon.svg" id="plus-icon"></span>
-        <span id="addFolder" bid="1"><img src="text-file-icon.svg" id="folder-icon"><img src="plus-icon.svg" id="plus-icon"></span>
+    <div id="header" style="display: none">
+        <button id="addFolder" bid="1">Add Folder</button>
+        <button id="addTextFile" bid="2">Add Text File</button>
     </div>
 
     <!-- <div id="modal-example">
@@ -46,6 +44,12 @@
             <button id="cancel">Cancel</button>
             <button id="ok">Ok</button>
         </div>
+    </div>
+
+    <div id="main-context-menu">
+        <div id="cm-add-folder" class="item-c-mm">Add new Folder</div>
+        <div id="cm-add-file" class="item-c-mm">Add new File</div>
+        <div id="cm-add-album" class="item-c-mm">Add new Album</div>
     </div>
 
     <template class="resources-template">
