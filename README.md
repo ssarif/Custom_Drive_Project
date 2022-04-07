@@ -10,7 +10,7 @@
 * We can edit the text files, change font color, bg color, font family, font size, download, upload...
 * We can add photos in photo album, download photos, upload photos, playAlbum, delete photo.....
 
-
+----------------------------
 
 ### Languages used to build this project
 * Javascript
