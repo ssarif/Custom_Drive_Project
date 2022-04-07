@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/userInput.css">
     <link rel="stylesheet" href="css/albumApp.css">
     <link rel="stylesheet" href="css/context-menu.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 
 <body>
@@ -24,7 +25,7 @@
             <button id="addAlbum" bid="3">Add Album</button>
         </div>
 
-        <div id="breadcrumb">
+        <div class="breadcrumb-area" id="breadcrumb">
             <a purpose="path" rid="-1"><span id="home-icon" class="material-icons">home</span>Home</a>
         </div>
 
@@ -40,6 +41,15 @@
         <div id="app-menu-bar">
         </div>
         <div id="app-body"></div>
+    </div>
+
+    <div id="footer">
+        <span id="footer-home-icon" class="material-icons">home</span>
+        <input type="text" id="search-input" placeholder="Search here">
+        <span class="material-icons" id="search">search</span>
+    </div>
+
+    <div id="searchTitle">
     </div>
 
     <div id="album-app">
@@ -166,6 +176,7 @@
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/notepadApp.js"></script>
     <script type="text/javascript" src="js/albumApp.js"></script>
+    <script type="text/javascript" src="js/searchbar.js"></script>
 
 </body>
 

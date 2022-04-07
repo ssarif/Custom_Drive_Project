@@ -1,16 +1,17 @@
 #resource-container {
-    height: calc(100vh - 35vh);
+    height: calc(100vh - 16vh);
     width: 100vw;
     padding: .5rem;
     display: flex;
     justify-content: flex-start;
+    align-content: flex-start;
     flex-wrap: wrap;
 }
 
 .resource-box {
     margin: 0px 10px;
-    width: 10%;
-    height: 40%;
+    width: 130px;
+    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;

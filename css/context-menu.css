@@ -2,18 +2,19 @@
     display: none;
     position: fixed;
     z-index: 100000;
-    width: 190px;
-    color: black;
-    background-color: rgb(241, 238, 238);
-    border: 1px solid black;
+    width: 200px;
+    background-color: rgb(141, 138, 138);
+    border: 1px solid rgb(143, 139, 139);
     border-radius: 3px;
 }
 
 #main-context-menu > * {
-    padding: 6px 10px;
-    font-size: 14px;
+    margin: 7px 0px;
+    padding: 10px 10px;
+    font-size: 15px;
     font-weight: normal;
-    color: black;
+    border-bottom: 1px solid rgb(218, 211, 211);
+    color: white;
     display: flex;
     justify-content: space-between;
 }
@@ -23,6 +24,7 @@
 }
 
 #main-context-menu > *:hover {
+    color: black;
     background-color: white;
     cursor: default;
 }

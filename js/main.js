@@ -14,6 +14,7 @@ let divAppMenuBar = document.querySelector("#app-menu-bar");
 let divAppBody = document.querySelector("#app-body");
 let appClose = document.querySelector("#app-close");
 let divUserInput = document.querySelector("#userInput");
+let divSearchTitle = document.querySelector("#searchTitle");
 
 let templates = document.querySelector("#templates");
 let resourceTemplate = document.querySelector(".resources-template");
@@ -27,16 +28,17 @@ btnAddAlbum.addEventListener("click", addResource);
 aRootPath.addEventListener("click", viewFolderFromPath);
 // appClose.addEventListener("click", closeApp);
 
-window.addEventListener("contextmenu", function(event) {
+window.addEventListener("contextmenu", function (event) {
     event.preventDefault();
     if (event.target.classList[0] === "r-img") return;
+    if (event.target.classList[0] === "breadcrumb-area") return;
     var contextElement = document.getElementById("main-context-menu");
     contextElement.style.display = "block";
     contextElement.style.top = event.pageY + "px";
     contextElement.style.left = event.pageX + "px";
 })
 
-window.addEventListener("click", function() {
+window.addEventListener("click", function () {
     document.getElementById("main-context-menu").style.display = "none";
 })
 
@@ -122,7 +124,7 @@ function addResourceHTML(rname, rtype, rid, pid) {
         resourceImg.setAttribute("src", "icons/text-file-icon.svg");
     } else if (rtype == "album") {
         resourceImg.setAttribute("src", "icons/album-icon.svg");
-    } 
+    }
 
     let threeDots = resourceBox.querySelector(".three-dots");
     resourceBox.addEventListener("mouseover", function () {
@@ -156,6 +158,7 @@ function addResourceHTML(rname, rtype, rid, pid) {
     liDelete.addEventListener("click", deleteResource);
     liView.addEventListener("click", viewResource);
     resourceBox.addEventListener("dblclick", viewResourceOnDoubleClick);
+    resourceBox.addEventListener("click", setBreadcrumbFromResourceSearch);
 
     resourceBox.setAttribute("rid", rid);
     resourceBox.setAttribute("pid", pid);
@@ -260,6 +263,10 @@ function viewResourceOnDoubleClick() {
         let aPathTemplate = templates.content.querySelector("a[purpose='path']");
         let aPath = document.importNode(aPathTemplate, true);
 
+        divbreadcrumb.style.opacity = "1";
+        divbreadcrumb.style['pointer-events'] = 'all';
+        divSearchTitle.innerHTML = "";
+        divSearchTitle.style.display = "none";
 
         aPath.innerHTML = rname;
         aPath.setAttribute("rid", rid);
@@ -302,6 +309,10 @@ function viewResource() {
         let aPathTemplate = templates.content.querySelector("a[purpose='path']");
         let aPath = document.importNode(aPathTemplate, true);
 
+        divbreadcrumb.style.opacity = "1";
+        divbreadcrumb.style['pointer-events'] = 'all';
+        divSearchTitle.innerHTML = "";
+        divSearchTitle.style.display = "none";
 
         aPath.innerHTML = rname;
         aPath.setAttribute("rid", rid);
@@ -360,6 +371,14 @@ function viewFolderFromPath() {
     }
 }
 
+function setBreadcrumbFromResourceSearch() {
+    let resourceBox = this;
+    // console.log(resourceBox);
+    let rid = resourceBox.getAttribute("rid");
+    let pid = resourceBox.getAttribute("pid");
+
+}
+
 function deleteResource() {
     let miniMenu = this.parentNode;
     miniMenu.style.display = "none";
@@ -375,14 +394,14 @@ function deleteResource() {
         return;
     }
 
-    if(sure) {
+    if (sure) {
         // delete in HTML
         resourceContainer.removeChild(resourceBox);
 
         // delete in RAM
-        if(childrenExists) {
+        if (childrenExists) {
             deleteHelper(ridTBD);
-        }  else {
+        } else {
             let ridx = resources.findIndex(r => r.rid == ridTBD);
             resources.splice(ridx, 1);
         }
