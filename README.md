@@ -1,4 +1,4 @@
-# Happycart-project
+# Custom_Drive
 
 ## [Project is live here](https://custom-drive.netlify.app/)
 
@@ -7,6 +7,8 @@
 * User can create folder, text file, album by simply right click on window and click on add button. 
 * We can create folder inside folders like how we do in file explorer application and create files also in those folders
 * We can nagicate through differnt folders by clicking on the breadcrumb
+* We can edit the text files, change font color, bg color, font family, font size, download, upload...
+* We can add photos in photo album, download photos, upload photos, playAlbum, delete photo.....
 
 
 
